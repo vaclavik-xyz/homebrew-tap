@@ -97,10 +97,14 @@ jobs:
           RUBY
 
       - name: Commit and push
+        env:
+          TAG: ${{ github.event.client_payload.tag }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
         run: |
           VERSION="${TAG#v}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/vaclavik-xyz/homebrew-tap.git"
           git add Formula/readout.rb Casks/readout.rb
           git commit -m "Update readout to ${VERSION}"
           git push
