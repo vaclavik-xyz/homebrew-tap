@@ -3,10 +3,10 @@ cask "readout" do
 
   if Hardware::CPU.arm?
     url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.0/readOut-macos-arm64.dmg"
-    sha256 "38a1e470bfeb230eb0542b054ae0b86ca931f533998a6c97dc9d53ea417adbb8"
+    sha256 "6c74558bc88a0f3edda2a5e74ebcd259783bb8b5e31707427438215bf5e5d5cb"
   else
     url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.0/readOut-macos-x64.dmg"
-    sha256 "e018fb28ead1c1b6cad84e6fbca6c47f322d53749a07a6db9adc4f8864a36547"
+    sha256 "c95f187fa0d5b8a48419e0310f3582f1d491c2a6a1374ff5129cec2984931946"
   end
 
   name "readOut"
