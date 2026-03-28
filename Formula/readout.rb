@@ -6,16 +6,16 @@ class Readout < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.0/readOutRS-macos-arm64.tar.gz"
-      sha256 "e22f300304746ce6299cbc791f86c4a0f73de0ea99a9a05578d98a27544e3124"
+      sha256 "691c4372564121cab4521772a8cb6a38df6f44e0551a6aa07eff22b13e9eeb27"
     else
       url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.0/readOutRS-macos-x64.tar.gz"
-      sha256 "f9fa5c6cbe71847ea9af90883dd51b1694ff4b01a663f0cc788aa78d11941257"
+      sha256 "92f9aa380509c4cd432f8a546ae6dae0335c3ef1699f2fd28511b492fc943dea"
     end
   end
 
   on_linux do
     url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.0/readOutRS-linux-x64.tar.gz"
-    sha256 "ddfdebd5a805126f496d1ead51af052e81f1d68c208e76930eac01721c8d2e8b"
+    sha256 "8903f9c45316f35f462afbea21174caca5b1019bb9918505c933841a4349da97"
   end
 
   def install
