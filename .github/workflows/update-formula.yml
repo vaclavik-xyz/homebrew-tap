@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Update formula version and checksums
+      - name: Update formula and cask
         env:
           TAG: ${{ github.event.client_payload.tag }}
         run: |
@@ -24,6 +24,15 @@ jobs:
             SHA=$(curl -sL "${URL}" | sha256sum | cut -d' ' -f1)
             echo "${LABEL}: ${SHA}"
             export "SHA_${LABEL//-/_}=${SHA}"
+          done
+
+          # DMG checksums for cask
+          for LABEL in macos-arm64 macos-x64; do
+            URL="${BASE_URL}/readOut-${LABEL}.dmg"
+            echo "Downloading ${URL}..."
+            SHA=$(curl -sL "${URL}" | sha256sum | cut -d' ' -f1)
+            echo "dmg-${LABEL}: ${SHA}"
+            export "DMG_${LABEL//-/_}=${SHA}"
           done
 
           # Update formula
@@ -59,10 +68,36 @@ jobs:
           end
           RUBY
 
+          # Update cask
+          cat > Casks/readout.rb << RUBY
+          cask "readout" do
+            version "${VERSION}"
+
+            if Hardware::CPU.arm?
+              url "${BASE_URL}/readOut-macos-arm64.dmg"
+              sha256 "${DMG_macos_arm64}"
+            else
+              url "${BASE_URL}/readOut-macos-x64.dmg"
+              sha256 "${DMG_macos_x64}"
+            end
+
+            name "readOut"
+            desc "Real-time measurement dashboard for SCPI multimeters and USB-C power meters"
+            homepage "https://github.com/vaclavik-xyz/readOutRS"
+
+            app "readOut.app"
+
+            zap trash: [
+              "~/Library/Preferences/xyz.vaclavik.readout.plist",
+            ]
+          end
+          RUBY
+
       - name: Commit and push
         run: |
+          VERSION="${TAG#v}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Formula/readout.rb
-          git commit -m "Update readout to ${TAG#v}"
+          git add Formula/readout.rb Casks/readout.rb
+          git commit -m "Update readout to ${VERSION}"
           git push
