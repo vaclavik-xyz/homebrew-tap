@@ -1,12 +1,12 @@
 cask "readout" do
-  version "0.1.0"
+  version "0.1.2"
 
   if Hardware::CPU.arm?
-    url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.0/readOut-macos-arm64.dmg"
-    sha256 "6c74558bc88a0f3edda2a5e74ebcd259783bb8b5e31707427438215bf5e5d5cb"
+    url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.2/readOut-macos-arm64.dmg"
+    sha256 "ece7c4c628446e88491014dbb321e16a2d9e9fce6a9b7576115dd5bbec1f8f5d"
   else
-    url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.0/readOut-macos-x64.dmg"
-    sha256 "c95f187fa0d5b8a48419e0310f3582f1d491c2a6a1374ff5129cec2984931946"
+    url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.2/readOut-macos-x64.dmg"
+    sha256 "def24dc73c04ea91dcb16778d4c5b32cb62c78dfed2c24c4111f1b04df572557"
   end
 
   name "readOut"
