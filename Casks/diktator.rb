@@ -2,12 +2,13 @@ cask "diktator" do
   version "1.18.0"
   sha256 "8756111c7fc464a73f281beabe175755a9cc065cdde910d7cbeb1408fc108361"
 
-  url "https://github.com/vaclavik-xyz/diktator-releases/releases/download/v#{version}/Diktator.dmg"
+  url "https://github.com/vaclavik-xyz/diktator-releases/releases/download/v#{version}/Diktator.dmg",
+      verified: "github.com/vaclavik-xyz/diktator-releases/"
   name "DikTátor"
-  desc "Czech-first voice dictation for macOS"
-  homepage "https://diktator-cloud.vercel.app"
+  desc "Czech-first voice dictation with optional AI cleanup"
+  homepage "https://diktator-cloud.vercel.app/"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Diktator.app"
 
