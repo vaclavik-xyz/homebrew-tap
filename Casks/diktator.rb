@@ -4,7 +4,7 @@ cask "diktator" do
 
   url "https://github.com/vaclavik-xyz/diktator-releases/releases/download/v#{version}/Diktator.dmg",
       verified: "github.com/vaclavik-xyz/diktator-releases/"
-  name "DikTátor"
+  name "Diktátor"
   desc "Czech-first voice dictation with optional AI cleanup"
   homepage "https://diktator-cloud.vercel.app/"
 
