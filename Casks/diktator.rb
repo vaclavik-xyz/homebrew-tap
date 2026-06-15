@@ -1,6 +1,6 @@
 cask "diktator" do
-  version "2.0.0"
-  sha256 "24aaa3b5706fc663a7df0d5308756fe79ce3747abf3dcedb98be2a5994828378"
+  version "2.0.1"
+  sha256 "97c0e7b81550ef14fa0e6db66d52d7e7fa27eb8e7d609c23142b82d98a307a8e"
 
   url "https://github.com/vaclavik-xyz/diktator-releases/releases/download/v#{version}/Diktator.dmg",
       verified: "github.com/vaclavik-xyz/diktator-releases/"
