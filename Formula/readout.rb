@@ -1,21 +1,21 @@
 class Readout < Formula
   desc "Real-time measurement dashboard for SCPI multimeters and USB-C power meters"
   homepage "https://github.com/vaclavik-xyz/readOutRS"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.1/readOutRS-macos-arm64.tar.gz"
-      sha256 "977bdb2118f66d7c3c7bb09d91cc39f733f1ff2e0f4f043c48bfc9650ecb10fa"
+      url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.2/readOutRS-macos-arm64.tar.gz"
+      sha256 "db5dd3e0a49ad0e9c040724fd5aa0169b667dfc8bf13748443e4ab5123882767"
     else
-      url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.1/readOutRS-macos-x64.tar.gz"
-      sha256 "76d6312fbeebc385661ce5d7735a716b07edf89844459f096d7db0e082dd2ef7"
+      url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.2/readOutRS-macos-x64.tar.gz"
+      sha256 "4989bd0d4ba9a0b1336be1273a9c9057a76dd2be548cf0b9a30f1efa927e8aaa"
     end
   end
 
   on_linux do
-    url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.1/readOutRS-linux-x64.tar.gz"
-    sha256 "f3ee018f3fd56590a3858d2ff04012ac439a8525fc5788fa23ab91bff712f1e6"
+    url "https://github.com/vaclavik-xyz/readOutRS/releases/download/v0.1.2/readOutRS-linux-x64.tar.gz"
+    sha256 "41c62e42efb1d9ff25ea331620f0dca0b6609edd1de248aae98064ad12d55f5f"
   end
 
   def install
