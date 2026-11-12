@@ -1,6 +1,6 @@
 cask "diktato" do
-  version "4.1.0"
-  sha256 "aa3ab6820e98fd7b7c5169ef08b82ca3c73d14df26ffd12882dec41fffb45461"
+  version "4.1.1"
+  sha256 "62f8324f6ccb71a2063a1b8cd12023333c363f3202d01632db95589828c4d4f1"
 
   url "https://github.com/vaclavik-xyz/diktato-releases/releases/download/v#{version}/Diktato.dmg",
       verified: "github.com/vaclavik-xyz/diktato-releases/"
